@@ -1,0 +1,6 @@
+{
+  "name": "Halloween Night Rescue Kit",
+  "description": "High-converting sales landing page for the Halloween Night Rescue Kit ($6.99 USD) printable activities bundle for American families.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Compatibility shim for browser extensions that attempt to overwrite window.fetch
+      (function() {
+        try {
+          var originalFetch = window.fetch ? window.fetch.bind(window) : null;
+          var currentFetch = originalFetch;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function() {
+              return currentFetch;
+            },
+            set: function(fn) {
+              currentFetch = fn;
+            }
+          });
+        } catch (e) {
+          // ignore
+        }
+      })();
+    </script>
+    <title>Halloween Night Rescue Kit | Printable Family Activities</title>
+    <meta name="description" content="Make Halloween night unforgettable! 3 ready-to-print Halloween activities for family gatherings, parties, and kids. Instant digital PDF access for just $6.99." />
+    <meta property="og:title" content="Halloween Night Rescue Kit | $6.99 Printable Family Fun" />
+    <meta property="og:description" content="Three fun-filled printable activities to bring your Halloween party to life without spending hours planning. Bingo, Scavenger Hunt, and Party Challenge Cards." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF8A24'%3E%3Cpath d='M12 2c-.6 0-1 .4-1 1v1.1C7.2 4.6 4 7.9 4 12c0 4.4 3.6 8 8 8s8-3.6 8-8c0-4.1-3.2-7.4-7-7.9V3c0-.6-.4-1-1-1zm-4 8c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1zm8 0c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1zm-4 4c1.8 0 3.3 1 3.9 2.5H8.1c.6-1.5 2.1-2.5 3.9-2.5z'/%3E%3C/svg%3E" />
+  </head>
+  <body class="bg-[#17151C] text-[#FFF3DE] antialiased selection:bg-[#FF8A24] selection:text-[#17151C]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
