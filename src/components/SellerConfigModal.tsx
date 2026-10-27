@@ -86,7 +86,7 @@ export const SellerConfigModal: React.FC<SellerConfigModalProps> = ({
                 required
                 value={formData.checkoutUrl}
                 onChange={(e) => setFormData({ ...formData, checkoutUrl: e.target.value })}
-                placeholder="https://pay.kiwify.com/95ZFA9o"
+                placeholder="https://pay.kiwify.com/95ZFA9o?region=intl"
                 className="w-full bg-[#17151C] border border-[#FFF3DE]/20 focus:border-[#FF8A24] focus:ring-1 focus:ring-[#FF8A24] rounded-xl pl-9 pr-24 py-2.5 text-xs sm:text-sm text-[#FFF3DE] placeholder-[#FFF3DE]/30 outline-none transition-all"
               />
               <button
@@ -173,7 +173,7 @@ export const SellerConfigModal: React.FC<SellerConfigModalProps> = ({
               type="button"
               onClick={() => {
                 const defaultConf: SellerConfig = {
-                  checkoutUrl: 'https://pay.kiwify.com/95ZFA9o',
+                  checkoutUrl: 'https://pay.kiwify.com/95ZFA9o?region=intl',
                   supportEmail: 'support@halloweennightrescue.com',
                   storeName: 'Halloween Night Rescue Kit',
                   metaPixelId: '',
