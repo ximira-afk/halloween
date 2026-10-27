@@ -18,7 +18,7 @@ import { SellerConfigModal } from './components/SellerConfigModal.tsx';
 import { SellerConfig } from './types.ts';
 
 const DEFAULT_SELLER_CONFIG: SellerConfig = {
-  checkoutUrl: 'https://pay.kiwify.com.br/sample-halloween-rescue-kit',
+  checkoutUrl: 'https://pay.kiwify.com/95ZFA9o',
   supportEmail: 'support@halloweennightrescue.com',
   storeName: 'Halloween Night Rescue Kit',
   metaPixelId: '',
@@ -27,12 +27,17 @@ const DEFAULT_SELLER_CONFIG: SellerConfig = {
 export default function App() {
   const price = '$6.99';
 
-  // Persistent seller configuration
+  // Persistent seller configuration with automatic migration to confirmed Kiwify checkout URL
   const [sellerConfig, setSellerConfig] = useState<SellerConfig>(() => {
     try {
       const stored = localStorage.getItem('halloween_seller_config');
       if (stored) {
-        return JSON.parse(stored);
+        const parsed = JSON.parse(stored);
+        if (!parsed.checkoutUrl || parsed.checkoutUrl.includes('sample-halloween-rescue-kit')) {
+          parsed.checkoutUrl = 'https://pay.kiwify.com/95ZFA9o';
+          localStorage.setItem('halloween_seller_config', JSON.stringify(parsed));
+        }
+        return parsed;
       }
     } catch {
       // ignore
